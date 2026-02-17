@@ -1,0 +1,6 @@
+alias emacs='emacs -nw'
+alias emasc='emacs'
+alias emsca='emacs'
+alias emcas='emacs'
+alias  emac='emacs'
+alias     e='emacsclient -n'
