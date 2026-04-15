@@ -1,47 +1,6 @@
 . $BASHRC_ROOT/formats.sh
-    FORMATS_SH=TRUE
+FORMATS_SH=TRUE
 
-    PLAIN="\e[0m"
-    BOLD="\e[1m"
-    DIM="\e[2m"
-    ITALICS="\e[3m"
-    UNDERLINED="\e[4m"
-    BLINK="\e[5m"
-    INVERTED="\e[7m"
-    HIDDEN="\e[8m"
-    STRIKETHROUGH="\e[9m"
-    RED="\e[31m"
-    GREEN="\e[32m"
-    YELLOW="\e[33m"
-    BLUE="\e[34m"
-    MAGENTA="\e[35m"
-    CYAN="\e[36m"
-    LIGHTGRAY="\e[37m"
-    DEFAULTFMT="\e[39m"
-    DARKGRAY="\e[90m"
-    LIGHTRED="\e[91m"
-    LIGHTGREEN="\e[92m"
-    LIGHTYELLOW="\e[93m"
-    LIGHTBLUE="\e[94m"
-    LIGHTMAGENTA="\e[95m"
-    LIGHTCYAN="\e[96m"
-    WHITE="\e[97m"
-    BLACKBACK="\e[40m"
-    REDBACK="\e[41m"
-    GREENBACK="\e[42m"
-    YELLOWBACK="\e[43m"
-    BLUEBACK="\e[44m"
-    MAGENTABACK="\e[45m"
-    CYANBACK="\e[46m"
-    LIGHTGRAYBACK="\e[47m"
-    DEFAULTBACK="\e[100m"
-    DARKGRAYBACK="\e[101m"
-    LIGHTREDBACK="\e[102m"
-    LIGHTGREENBACK="\e[103m"
-    LIGHTYELLOWBACK="\e[104m"
-    LIGHTBLUEBACK="\e[105m"
-    LIGHTMAGENTABACK="\e[106m"
-    WHITEBACK="\e[107m"
 function jobs_function () {
     echo $1 $3
 }
@@ -60,7 +19,7 @@ function prompt_function () {
         if [ -d "$curr/.git" ]
         then
             in_git_repo=true
-            
+
             NON_GIT_PATH=$(realpath "$curr/..")
             GIT_ROOT=${curr##$NON_GIT_PATH}/
             NON_GIT_PATH=${NON_GIT_PATH/$HOME/'~'}

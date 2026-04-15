@@ -1,5 +1,6 @@
-BASHRC_ROOT=~/dotfiles/bash
-
+# DOTFILES_ROOT should be defined in here:
+. ~/.local/bashrc_local_pre.sh
+BASHRC_ROOT=$DOTFILES_ROOT/bash
 ################################################################################
 case $- in
     *i*) ;;
@@ -7,15 +8,12 @@ case $- in
 esac
 ################################################################################
 . $BASHRC_ROOT/variables.sh
-. $BASHRC_ROOT/history.sh
 . $BASHRC_ROOT/prompt.sh
 . $BASHRC_ROOT/python.sh
 . $BASHRC_ROOT/emacs.sh
 . $BASHRC_ROOT/git.sh
 . $BASHRC_ROOT/docker.sh
 . $BASHRC_ROOT/kubernetes.sh
-. $BASHRC_ROOT/go.sh
-. ~/.local/bashrc_local.sh
 . /etc/bash_completion
 ################################################################################
 shopt -s globstar
@@ -32,7 +30,7 @@ alias ls='ls --color'
 alias lx='exa -a --icons --long' # the --git flag is kind of nice, but sometimes takes too long
 alias bat='/usr/bin/batcat'
 alias ssdn='sudo shutdown now'
-alias brc="$EDITOR ~/.bashrc"
+alias brc='$EDITOR $BASHRC_ROOT/bashrc.sh'
 ################################################################################
 function sho () {
         if [ -d $1 ]; then
@@ -48,3 +46,4 @@ function sho () {
 # s sho
 # c cat
 # k kill
+. ~/.local/bashrc_local_post.sh
