@@ -28,6 +28,8 @@ alias rp='realpath'
 alias fzf='fzf --bind "enter:execute(echo {}),ctrl-e:execute-silent(code {})"'
 alias ls='ls --color'
 alias lx='exa -a --icons --long' # the --git flag is kind of nice, but sometimes takes too long
+alias  d='exa -a --icons --long'
+alias bat='/usr/bin/batcat'
 alias bat='/usr/bin/batcat'
 alias ssdn='sudo shutdown now'
 alias brc='$EDITOR $BASHRC_ROOT/bashrc.sh'
@@ -39,6 +41,16 @@ function sho () {
                 bat --paging=never $1
         fi
 }
+
+function open-dir-or-file () {
+	if [ -d $1 ]; then
+		cd $1
+		exa -a --icons --long
+	else
+		bat --paging=never $1
+	fi
+}
+alias o=open-dir-or-file
 ################################################################################
 # speed dial
 # gt go to
